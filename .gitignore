@@ -1,7 +1,5 @@
-*.bak
-*~
-bin
-target
-*.jar
-# GFMV generated
-.*.html
+.classpath
+.project
+.settings/
+.tycho-consumer-pom.xml
+target/

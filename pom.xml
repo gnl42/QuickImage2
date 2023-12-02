@@ -1,117 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>nu.psnet.quickimage</groupId>
-	<artifactId>nu.psnet.quickimage.parent</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>QuickImage (parent)</name>
+    <groupId>me.glindholm.quickimage2</groupId>
+    <artifactId>quickimage2</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>QuickImage2</name>
 
-	<developers>
-		<developer>
-			<id>per.salomonsson</id>
-			<name>Per Salomonsson</name>
-			<email>per.salomonsson@gmail.com</email>
-			<organization></organization>
-			<roles>
-				<role>Author</role>
-			</roles>
-			<timezone></timezone>
-		</developer>
-	</developers>
-	<contributors>
-		<contributor>
-			<name>Paul Verest</name>
-			<organization>Nodeclipse organization</organization>
-			<organizationUrl>http://www.nodeclipse.org/</organizationUrl>
-			<timezone>+8</timezone>
-		</contributor>
-	</contributors>
+    <developers>
+        <developer>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Per Salomonsson</name>
+            <email>per.salomonsson@gmail.com</email>
+            <organization></organization>
+            <roles>
+                <role>Author</role>
+            </roles>
+            <timezone></timezone>
+        </contributor>
+        <contributor>
+            <name>Paul Verest</name>
+            <organization>Nodeclipse organization</organization>
+            <organizationUrl>http://www.nodeclipse.org/</organizationUrl>
+            <timezone>+8</timezone>
+        </contributor>
+    </contributors>
 
-	<prerequisites>
-		<maven>3.0</maven>
-	</prerequisites>
+    <properties>
+        <tycho-version>4.0.4</tycho-version>
 
-	<properties>
-		<tycho-version>2.7.3</tycho-version>
-
-		<!-- PROJECT SETTINGS -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
+        <!-- PROJECT SETTINGS -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
 
-	<modules>
-		<module>quickimage</module>
-		<module>quickimage-feature</module>
-		<module>quickimage-p2repository</module>
-	</modules>
+    <modules>
+        <module>quickimage2.target</module>
+        <module>quickimage2-plugin</module>
+        <module>quickimage2-feature</module>
+        <module>quickimage2-p2</module>
+    </modules>
 
-	<repositories>
-		<repository>
-			<id>eclipse latest</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/latest</url>
-		</repository>
+    <repositories>
+        <repository>
+            <id>eclipse latest</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/releases/latest</url>
+        </repository>
 
-	</repositories>
+    </repositories>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<extensions>true</extensions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-compiler-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<source>11</source>
-					<target>11</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<environments>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>macosx</os>
-							<ws>cocoa</ws>
-							<arch>x86_64</arch>
-						</environment>
-					</environments>
-				</configuration>
-			</plugin>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-compiler-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <environments>
+                        <environment>
+                            <os>linux</os>
+                            <ws>gtk</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <environment>
+                            <os>win32</os>
+                            <ws>win32</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <environment>
+                            <os>macosx</os>
+                            <ws>cocoa</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                    </environments>
+                    <target>
+                        <artifact>
+                            <groupId>me.glindholm.quickimage2</groupId>
+                            <artifactId>quickimage2.target</artifactId>
+                            <version>${project.parent.version}</version>
+                        </artifact>
+                    </target>
+                </configuration>
+            </plugin>
 
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
 
 </project>

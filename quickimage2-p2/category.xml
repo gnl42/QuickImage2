@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/me.glindholm.quickimage2_0.0.0.jar" id="me.glindholm.quickimage2.feature" version="0.0.0">
+      <category name="me.glindholm.quickimage2"/>
+   </feature>
+   <category-def name="me.glindholm.quickimage2" label="QuickImage2">
+      <description>
+      	QuickImage2 - Eclipse plugin for browsing images.
+      </description>
+   </category-def>
+</site>
