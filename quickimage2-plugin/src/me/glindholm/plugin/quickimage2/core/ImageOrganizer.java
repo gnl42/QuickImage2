@@ -5,6 +5,7 @@ package me.glindholm.plugin.quickimage2.core;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -128,7 +129,7 @@ public class ImageOrganizer {
 
     private void initList() {
         final File f = new File(path);
-        final File[] files = f.listFiles();
+        final File[] files = f.listFiles((FileFilter) name -> !name.getName().startsWith("."));
 
         if (files != null) {
             final String[] sfiles = new String[files.length];

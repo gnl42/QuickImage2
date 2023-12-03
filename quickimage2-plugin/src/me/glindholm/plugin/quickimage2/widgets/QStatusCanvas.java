@@ -31,7 +31,7 @@ public class QStatusCanvas extends Canvas {
     private String filename = "";
     private int depth = 0;
     private Image image;
-    private final DecimalFormat df = new DecimalFormat("0.000");
+    private static final DecimalFormat df = new DecimalFormat("0.000");
     private final Color COLOR_DARK_GRAY;
     private final QManager manager;
     private final Composite parent;
@@ -59,18 +59,45 @@ public class QStatusCanvas extends Canvas {
         }
 
         filename = current.getDisplayName();
-        filesize = df.format(current.getImageSize());
+        filesize = format(current.getImageSize());
         if (current.getImageSize() == 0) {
             filesize = "unknown";
         }
         redraw();
     }
 
+    private static String format(long size) {
+        if (size < 0) {
+            return "-";
+        }
+        if (size < 1024) {
+            // format as byte
+             DecimalFormat fmt = new DecimalFormat("0 bytes");
+            return fmt.format(size);
+        } else if (size >= 1024 && size <= 1048575) {
+            // format as KB
+            double formattedValue = size / 1024.0;
+            df.applyPattern("0.00 KB");
+            return df.format(formattedValue);
+        } else if (size >= 1048576 && size <= 1073741823) {
+            // format as MB
+            double formattedValue = size / 1048576.0;
+            df.applyPattern("0.00 MB");
+            return df.format(formattedValue);
+        }
+
+        // format as GB
+        double formattedValue = size / 1073741824.0;
+        df.applyPattern("0.00 GB");
+        return df.format(formattedValue);
+    }
+
+
     void paint(final GC gc) {
         int x = 0;
         int canvasHeight = this.getSize().y;
 
-        x += Math.max(addText("Size (kb): " + filesize, x, gc), 170);
+        x += Math.max(addText(filesize, x, gc), 110);
         gc.drawLine(x, 0, x, canvasHeight);
 
         x += Math.max(addText("Depth: " + depth, x, gc), 100);

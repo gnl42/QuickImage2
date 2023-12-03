@@ -53,7 +53,7 @@ public class ImageHolder {
     private final Color COLOR_GRAY;
     private final Color COLOR_DARKBLUE;
     private final QManager manager;
-    private double imageSize = 0;
+    private long imageSize = 0;
     static Font font;
     private final File unavailable;
 
@@ -158,14 +158,14 @@ public class ImageHolder {
         setDisplayName(storage.getName());
     }
 
-    public double getImageSize() {
+    public long getImageSize() {
         return imageSize;
     }
 
     public void setFile(final File file) {
         this.file = file;
         setDisplayName(file.getName());
-        imageSize = file.length() / 1024D;
+        imageSize = file.length();
     }
 
     private void initFullsize() throws RuntimeException, FileNotFoundException, IOException, CoreException, InterruptedException, ExecutionException {
