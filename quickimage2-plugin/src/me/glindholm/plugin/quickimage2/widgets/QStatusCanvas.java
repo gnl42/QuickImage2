@@ -10,14 +10,11 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.graphics.Region;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Text;
 
 import me.glindholm.plugin.quickimage2.core.ImageHolder;
-import me.glindholm.plugin.quickimage2.core.ImageOrganizer;
 import me.glindholm.plugin.quickimage2.core.QManager;
 
 /**
@@ -32,7 +29,7 @@ public class QStatusCanvas extends Canvas {
     private int depth = 0;
     private Image image;
     private static final DecimalFormat df = new DecimalFormat("0.000");
-    private final Color COLOR_DARK_GRAY;
+    private final Color colorDarkGray;
     private final QManager manager;
     private final Composite parent;
 
@@ -43,13 +40,13 @@ public class QStatusCanvas extends Canvas {
         this.manager = manager;
 
         addPaintListener(event -> paint(event.gc));
-        COLOR_DARK_GRAY = parent.getDisplay().getSystemColor(SWT.COLOR_DARK_GRAY);
+        colorDarkGray = parent.getDisplay().getSystemColor(SWT.COLOR_DARK_GRAY);
         // separator = new Color(getDisplay(), 140,140,140);
         // setBackground(new Color(parent.getDisplay(), 255,0,0));
     }
 
     public void updateWithCurrent() {
-        ImageHolder current = manager.getImageOrganizer().getCurrent();
+        final ImageHolder current = manager.getImageOrganizer().getCurrent();
 
         image = current.getFullsize();
         if (image != null) {
@@ -66,36 +63,29 @@ public class QStatusCanvas extends Canvas {
         redraw();
     }
 
-    private static String format(long size) {
+    private static String format(final long size) {
         if (size < 0) {
             return "-";
         }
-        if (size < 1024) {
-            // format as byte
-             DecimalFormat fmt = new DecimalFormat("0 bytes");
-            return fmt.format(size);
-        } else if (size >= 1024 && size <= 1048575) {
-            // format as KB
-            double formattedValue = size / 1024.0;
+
+        final double formattedValue;
+        if (size <= 1048575) {
+            formattedValue = size / 1024.0;
             df.applyPattern("0.00 KB");
-            return df.format(formattedValue);
         } else if (size >= 1048576 && size <= 1073741823) {
-            // format as MB
-            double formattedValue = size / 1048576.0;
+            formattedValue = size / 1048576.0;
             df.applyPattern("0.00 MB");
-            return df.format(formattedValue);
+        } else {
+            formattedValue = size / 1073741824.0;
+            df.applyPattern("0.00 GB");
         }
-
-        // format as GB
-        double formattedValue = size / 1073741824.0;
-        df.applyPattern("0.00 GB");
         return df.format(formattedValue);
-    }
 
+    }
 
     void paint(final GC gc) {
         int x = 0;
-        int canvasHeight = this.getSize().y;
+        final int canvasHeight = getSize().y;
 
         x += Math.max(addText(filesize, x, gc), 110);
         gc.drawLine(x, 0, x, canvasHeight);
@@ -108,13 +98,13 @@ public class QStatusCanvas extends Canvas {
 
         addText("Name: " + filename, x, gc);
 
-        gc.setForeground(COLOR_DARK_GRAY);
+        gc.setForeground(colorDarkGray);
     }
 
-    private int addText(String text, int startPos, GC gc) {
-        Text size = new Text(parent, SWT.BORDER);
+    private int addText(final String text, final int startPos, final GC gc) {
+        final Text size = new Text(parent, SWT.BORDER);
         size.setText(text);
-        Point point = size.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+        final Point point = size.computeSize(SWT.DEFAULT, SWT.DEFAULT);
         gc.drawString(text, startPos + 5, 1);
 
         return point.x + 5;

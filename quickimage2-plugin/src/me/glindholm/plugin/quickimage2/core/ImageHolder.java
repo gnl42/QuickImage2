@@ -50,8 +50,8 @@ public class ImageHolder {
     private int absx, absy = 0;
     private final Point dim = new Point(140, 160);
     private boolean selected = false;
-    private final Color COLOR_GRAY;
-    private final Color COLOR_DARKBLUE;
+    private final Color colorGray;
+    private final Color colorTitleBackground;
     private final QManager manager;
     private long imageSize = 0;
     static Font font;
@@ -62,8 +62,8 @@ public class ImageHolder {
     public ImageHolder(final QManager manager, final Display display) {
         this.manager = manager;
         this.display = display;
-        COLOR_GRAY = display.getSystemColor(SWT.COLOR_DARK_GRAY);
-        COLOR_DARKBLUE = display.getSystemColor(SWT.COLOR_TITLE_BACKGROUND);
+        colorGray = display.getSystemColor(SWT.COLOR_DARK_GRAY);
+        colorTitleBackground = display.getSystemColor(SWT.COLOR_TITLE_BACKGROUND);
 
         if (font == null) {
             try {
@@ -99,9 +99,9 @@ public class ImageHolder {
             final Color c = gc.getForeground();
             if (isSelected()) {
                 gc.setLineWidth(3);
-                gc.setForeground(COLOR_DARKBLUE);
+                gc.setForeground(colorTitleBackground);
             } else {
-                gc.setForeground(COLOR_GRAY);
+                gc.setForeground(colorGray);
             }
 
             final Rectangle rect = new Rectangle(x + space / 2, y + space / 2, dim.x - space, dim.x - space);
@@ -111,7 +111,7 @@ public class ImageHolder {
             gc.drawRectangle(rect);
 
             gc.setFont(font);
-            gc.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
+            gc.setForeground(colorTitleBackground);
             gc.drawString(getDisplayName(), rect.x, rect.y + rect.height + 2, true);
 
             absx = x;
@@ -193,44 +193,41 @@ public class ImageHolder {
         return fullsize;
     }
 
-    private Image getImage(ImageInputStream in, boolean createThumb) throws InterruptedException, ExecutionException {
-        SwtCallable<Image, Exception> load2 = new SwtCallable<>() {
-            @Override
-            public Image call() throws Exception {
-                final BufferedImage img = ImageIO.read(in);
-                if (img != null) {
-                    ImageData data = convertToSWT(img);
-                    if (createThumb) {
-                        float w = 0;
-                        float h = 0;
-                        boolean doscale = false;
+    private Image getImage(final ImageInputStream in, final boolean createThumb) throws InterruptedException, ExecutionException {
+        final SwtCallable<Image, Exception> load2 = () -> {
+            final BufferedImage img = ImageIO.read(in);
+            if (img != null) {
+                ImageData data = convertToSWT(img);
+                if (createThumb) {
+                    float w = 0;
+                    float h = 0;
+                    boolean doscale = false;
 
-                        if (data.height > dim.x - space * 2) {
-                            doscale = true;
-                            h = (float) (data.height - (dim.x - space * 2)) / data.height;
-                        }
-                        if (data.width > dim.x - space * 2) {
-                            doscale = true;
-                            w = (float) (data.width - (dim.x - space * 2)) / data.width;
-                        }
-
-                        if (doscale) {
-                            final float scale = Math.max(w, h);
-                            w = data.width - data.width * scale;
-                            h = data.height - data.height * scale;
-                            if (w < 1) {
-                                w = 1;
-                            }
-                            if (h < 1) {
-                                h = 1;
-                            }
-                            data = data.scaledTo((int) w, (int) h);
-                        }
+                    if (data.height > dim.x - space * 2) {
+                        doscale = true;
+                        h = (float) (data.height - (dim.x - space * 2)) / data.height;
                     }
-                    return new Image(display, data);
-                } else {
-                    throw new IOException("Unable to load");
+                    if (data.width > dim.x - space * 2) {
+                        doscale = true;
+                        w = (float) (data.width - (dim.x - space * 2)) / data.width;
+                    }
+
+                    if (doscale) {
+                        final float scale = Math.max(w, h);
+                        w = data.width - data.width * scale;
+                        h = data.height - data.height * scale;
+                        if (w < 1) {
+                            w = 1;
+                        }
+                        if (h < 1) {
+                            h = 1;
+                        }
+                        data = data.scaledTo((int) w, (int) h);
+                    }
                 }
+                return new Image(display, data);
+            } else {
+                throw new IOException("Unable to load");
             }
         };
         return BusyIndicator.compute(load2).get();

@@ -5,7 +5,6 @@ package me.glindholm.plugin.quickimage2.core;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -216,8 +215,8 @@ public class ImageOrganizer {
 }
 
 class ImageFileFilter implements FileFilter {
-    String[] patterns = { ".bmp", ".cur", ".gif", ".ico", ".jpeg", ".jpg", ".pbm", ".pcx", ".pict", ".psd", ".png", ".pnm", ".ppm", ".sgi", ".svg",
-            ".tga", ".tif", ".tiff", ".wbd", ".webp", ".xpm", ".xwd" };
+    String[] patterns = { ".bmp", ".cur", ".gif", ".ico", ".incs", ".jpeg", ".jpg", ".pbm", ".pcx", ".pgm", ".pict", ".png", ".pnm", ".ppm", ".psd", ".sgi",
+            ".svg", ".tga", ".tif", ".tiff", ".webp", ".xpm", ".xwd" };
 
     @Override
     public boolean accept(final File f) {

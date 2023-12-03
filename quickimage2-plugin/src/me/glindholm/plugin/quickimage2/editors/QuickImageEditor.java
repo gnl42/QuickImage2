@@ -316,6 +316,14 @@ public class QuickImageEditor extends EditorPart {
             zoomFitImage.dispose();
         }
 
+        if (viewThumb != null && !viewThumb.isDisposed()) {
+            viewThumb.dispose();
+        }
+
+        if (viewFullsize != null && !viewFullsize.isDisposed()) {
+            viewFullsize.dispose();
+        }
+
         // Runtime.getRuntime().gc();
         super.dispose();
     }
