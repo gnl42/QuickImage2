@@ -9,8 +9,12 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Region;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Layout;
+import org.eclipse.swt.widgets.Text;
 
 import me.glindholm.plugin.quickimage2.core.ImageHolder;
 import me.glindholm.plugin.quickimage2.core.ImageOrganizer;
@@ -18,7 +22,7 @@ import me.glindholm.plugin.quickimage2.core.QManager;
 
 /**
  * @author Per Salomonsson
- * 
+ *
  */
 public class QStatusCanvas extends Canvas {
     private String filesize = "";
@@ -30,10 +34,12 @@ public class QStatusCanvas extends Canvas {
     private final DecimalFormat df = new DecimalFormat("0.000");
     private final Color COLOR_DARK_GRAY;
     private final QManager manager;
+    private final Composite parent;
 
     public QStatusCanvas(final QManager manager, final Composite parent, final int style) {
         // super(parent, style | SWT.BORDER);
         super(parent, style | SWT.FLAT);
+        this.parent = parent;
         this.manager = manager;
 
         addPaintListener(event -> paint(event.gc));
@@ -43,39 +49,47 @@ public class QStatusCanvas extends Canvas {
     }
 
     public void updateWithCurrent() {
-        if (manager.getImageOrganizer().getActiveView() == ImageOrganizer.VIEW_FULLSIZE) {
-            image = manager.getImageOrganizer().getCurrent().getFullsize();
-            if (image != null) {
-                depth = image.getImageData().depth;
-                width = image.getBounds().width;
-                height = image.getBounds().height;
-            }
+        ImageHolder current = manager.getImageOrganizer().getCurrent();
+
+        image = current.getFullsize();
+        if (image != null) {
+            depth = image.getImageData().depth;
+            width = image.getBounds().width;
+            height = image.getBounds().height;
         }
 
-        final ImageHolder holder = manager.getImageOrganizer().getCurrent();
-        filename = holder.getDisplayName();
-        filesize = df.format(holder.getImageSize());
-        if (holder.getImageSize() == 0) {
+        filename = current.getDisplayName();
+        filesize = df.format(current.getImageSize());
+        if (current.getImageSize() == 0) {
             filesize = "unknown";
         }
         redraw();
     }
 
     void paint(final GC gc) {
-        if (manager.getImageOrganizer().getActiveView() == ImageOrganizer.VIEW_FULLSIZE) {
-            gc.drawString("Size (kb): " + filesize, 5, 1);
-            gc.drawString("Depth: " + depth, 140, 1);
-            gc.drawString(width + " x " + height, 225, 1);
-            gc.drawString("Name: " + filename, 325, 1);
-            gc.setForeground(COLOR_DARK_GRAY);
-            gc.drawLine(135, 0, 135, 24);
-            gc.drawLine(210, 0, 210, 24);
-            gc.drawLine(320, 0, 320, 24);
-        } else {
-            gc.drawString("Size (kb): " + filesize, 5, 1);
-            gc.drawString("Name: " + filename, 140, 1);
-            gc.setForeground(COLOR_DARK_GRAY);
-            gc.drawLine(135, 0, 135, 24);
-        }
+        int x = 0;
+        int canvasHeight = this.getSize().y;
+
+        x += Math.max(addText("Size (kb): " + filesize, x, gc), 170);
+        gc.drawLine(x, 0, x, canvasHeight);
+
+        x += Math.max(addText("Depth: " + depth, x, gc), 100);
+        gc.drawLine(x, 0, x, canvasHeight);
+
+        x += Math.max(addText(width + "x" + height, x, gc), 105);
+        gc.drawLine(x, 0, x, canvasHeight);
+
+        addText("Name: " + filename, x, gc);
+
+        gc.setForeground(COLOR_DARK_GRAY);
+    }
+
+    private int addText(String text, int startPos, GC gc) {
+        Text size = new Text(parent, SWT.BORDER);
+        size.setText(text);
+        Point point = size.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+        gc.drawString(text, startPos + 5, 1);
+
+        return point.x + 5;
     }
 }
