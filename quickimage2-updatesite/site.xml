@@ -3,25 +3,25 @@
    <description url="http://www.psnet.nu/eclipse/updates">
       Update site for QuickImage
    </description>
-   <feature url="features/me.glindholm.quickimage2_1.0.3.2.jar" id="me.glindholm.quickimage2" version="1.0.3.2">
+   <feature url="features/me.glindholm.plugin.quickimage2_1.0.3.2.jar" id="me.glindholm.plugin.quickimage2" version="1.0.3.2">
       <category name="QuickImage"/>
    </feature>
-   <feature url="features/me.glindholm.quickimage2_1.0.3.1.jar" id="me.glindholm.quickimage2" version="1.0.3.1">
+   <feature url="features/me.glindholm.plugin.quickimage2_1.0.3.1.jar" id="me.glindholm.plugin.quickimage2" version="1.0.3.1">
       <category name="QuickImage"/>
    </feature>
-   <feature url="features/me.glindholm.quickimage2_1.0.3.jar" id="me.glindholm.quickimage2" version="1.0.3">
+   <feature url="features/me.glindholm.plugin.quickimage2_1.0.3.jar" id="me.glindholm.plugin.quickimage2" version="1.0.3">
       <category name="QuickImage"/>
    </feature>
-   <feature url="features/me.glindholm.quickimage2_1.0.2.jar" id="me.glindholm.quickimage2" version="1.0.2">
+   <feature url="features/me.glindholm.plugin.quickimage2_1.0.2.jar" id="me.glindholm.plugin.quickimage2" version="1.0.2">
       <category name="QuickImage"/>
    </feature>
-   <feature url="features/me.glindholm.quickimage2_1.0.1.jar" id="me.glindholm.quickimage2" version="1.0.1">
+   <feature url="features/me.glindholm.plugin.quickimage2_1.0.1.jar" id="me.glindholm.plugin.quickimage2" version="1.0.1">
       <category name="QuickImage"/>
    </feature>
-   <feature url="features/me.glindholm.quickimage2_1.0.0.jar" id="me.glindholm.quickimage2" version="1.0.0">
+   <feature url="features/me.glindholm.plugin.quickimage2_1.0.0.jar" id="me.glindholm.plugin.quickimage2" version="1.0.0">
       <category name="QuickImage"/>
    </feature>
-   <feature url="features/me.glindholm.quickimage2_0.2.0.jar" id="me.glindholm.quickimage2" version="0.2.0">
+   <feature url="features/me.glindholm.plugin.quickimage2_0.2.0.jar" id="me.glindholm.plugin.quickimage2" version="0.2.0">
       <category name="QuickImage"/>
    </feature>
    <category-def name="QuickImage" label="QuickImage"/>

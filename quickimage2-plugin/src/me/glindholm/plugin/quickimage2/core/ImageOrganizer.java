@@ -215,7 +215,7 @@ public class ImageOrganizer {
 }
 
 class ImageFileFilter implements FileFilter {
-    String[] patterns = { ".bmp", ".cur", ".gif", ".hdr", ".ico", ".jpeg", ".jpg", ".pbm", ".pcx", ".pict", ".psd", ".png", ".pnm", ".ppm", ".sgi", ".svg",
+    String[] patterns = { ".bmp", ".cur", ".gif", ".ico", ".jpeg", ".jpg", ".pbm", ".pcx", ".pict", ".psd", ".png", ".pnm", ".ppm", ".sgi", ".svg",
             ".tga", ".tif", ".tiff", ".wbd", ".webp", ".xpm", ".xwd" };
 
     @Override

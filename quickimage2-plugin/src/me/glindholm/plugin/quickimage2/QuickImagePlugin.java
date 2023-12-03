@@ -14,7 +14,6 @@ import org.osgi.framework.BundleContext;
 import com.twelvemonkeys.imageio.plugins.bmp.BMPImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.bmp.CURImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.dcx.DCXImageReaderSpi;
-import com.twelvemonkeys.imageio.plugins.hdr.HDRImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.icns.ICNSImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.iff.IFFImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.jpeg.JPEGImageReaderSpi;

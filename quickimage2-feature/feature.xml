@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="me.glindholm.quickimage2.feature"
+      id="me.glindholm.plugin.quickimage2.feature"
       label="QuickImage2"
       version="2.0.0.qualifier"
       provider-name="George Lindholm">
@@ -35,7 +35,7 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICEN
    </requires>
 
    <plugin
-         id="me.glindholm.quickimage2.plugin"
+         id="me.glindholm.plugin.quickimage2.plugin"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
@@ -231,6 +231,69 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICEN
 
    <plugin
          id="edu.illinois.library.imageio-xpm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.bmp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.icns"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.iff"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.pcx"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.pict"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.pnm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.sgi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.webp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.xwd"
          download-size="0"
          install-size="0"
          version="0.0.0"

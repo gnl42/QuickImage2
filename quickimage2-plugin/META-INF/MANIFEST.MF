@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: QuickImage2
-Bundle-SymbolicName: me.glindholm.quickimage2.plugin; singleton:=true
+Bundle-SymbolicName: me.glindholm.plugin.quickimage2.plugin; singleton:=true
 Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: me.glindholm.plugin.quickimage2.QuickImagePlugin
 Bundle-Vendor: George Lindholm
@@ -36,7 +36,6 @@ Require-Bundle: org.eclipse.core.resources,
  com.twelvemonkeys.imageio.core,
  com.twelvemonkeys.imageio.metadata,
  com.twelvemonkeys.imageio.bmp,
- com.twelvemonkeys.imageio.hdr,
  com.twelvemonkeys.imageio.icns,
  com.twelvemonkeys.imageio.iff,
  com.twelvemonkeys.imageio.jpeg,

@@ -9,7 +9,7 @@
             icon="icons/icon.gif"
             default="true"
             name="QuickImage2 Editor"
-            id="me.glindholm.quickimage2.editors.QuickImageEditor"
+            id="me.glindholm.plugin.quickimage2.editors.QuickImageEditor"
             extensions="gif,jpg,jpeg,png,ico,bmp">
       </editor>
    </extension>
