@@ -188,7 +188,7 @@ public class QuickImageEditor extends EditorPart {
         manager.getStatusCanvas().setLayoutData(statusData);
 
         canvasData.top = new FormAttachment(toolBar, 0);
-        canvasData.bottom = new FormAttachment(100, -30);
+        canvasData.bottom = new FormAttachment(100, -30); // FIXME How to calculate the -30?
         canvasData.right = new FormAttachment(100, 0);
         canvasData.left = new FormAttachment(0, 0);
 

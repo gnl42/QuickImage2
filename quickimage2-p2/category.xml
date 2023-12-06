@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/me.glindholm.plugin.quickimage2_0.0.0.jar" id="me.glindholm.plugin.quickimage2.feature" version="0.0.0">
-      <category name="me.glindholm.plugin.quickimage2"/>
+   <feature url="me.glindholm.plugin.quickimage2.feature_2.0.0.qualifier.jar" id="me.glindholm.plugin.quickimage2.feature" version="2.0.0.qualifier">
+      <category name="Tools"/>
    </feature>
-   <category-def name="me.glindholm.plugin.quickimage2" label="QuickImage2">
+   <category-def name="Tools" label="QuickImage2">
       <description>
-      	QuickImage2 - Eclipse plugin for browsing images.
+         QuickImage2 - Eclipse plugin for browsing images.
       </description>
    </category-def>
 </site>

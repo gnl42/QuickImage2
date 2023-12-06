@@ -358,7 +358,7 @@ public class ImageHolder {
             // pixels
             data.transparentPixel = -1;
             final WritableRaster raster = bufferedImage.getRaster();
-            final int[] pixelArray = new int[3];
+            final int[] pixelArray = new int[4];
             for (int y = 0; y < data.height; y++) {
                 for (int x = 0; x < data.width; x++) {
                     raster.getPixel(x, y, pixelArray);
