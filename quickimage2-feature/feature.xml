@@ -286,4 +286,11 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICEN
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="com.twelvemonkeys.imageio.thumbsdb"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
