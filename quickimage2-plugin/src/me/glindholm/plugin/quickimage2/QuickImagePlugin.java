@@ -13,6 +13,7 @@ import org.osgi.framework.BundleContext;
 
 import com.twelvemonkeys.imageio.plugins.bmp.BMPImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.bmp.CURImageReaderSpi;
+import com.twelvemonkeys.imageio.plugins.bmp.ICOImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.dcx.DCXImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.icns.ICNSImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.iff.IFFImageReaderSpi;
@@ -49,6 +50,7 @@ public class QuickImagePlugin extends AbstractUIPlugin {
             new CURImageReaderSpi(), //
             new DCXImageReaderSpi(), //
             new ICNSImageReaderSpi(), //
+            new ICOImageReaderSpi(), //
             new IFFImageReaderSpi(), //
             new JPEGImageReaderSpi(), //
             new PAMImageReaderSpi(), //
