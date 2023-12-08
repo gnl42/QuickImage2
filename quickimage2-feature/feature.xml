@@ -24,7 +24,7 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICEN
    </license>
 
    <url>
-      <update url="https://gnl42.github.io/QuickImage-update/"/>
+      <update url="https://gnl42.github.io/QuickImage2-update/"/>
    </url>
 
    <requires>
@@ -197,20 +197,6 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICEN
 
    <plugin
          id="com.twelvemonkeys.imageio.psd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.osgi"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.workbench"
          download-size="0"
          install-size="0"
          version="0.0.0"
