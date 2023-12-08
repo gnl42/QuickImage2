@@ -6,10 +6,14 @@
       provider-name="George Lindholm">
 
    <description>
-      The QuickImage plugin provides an eclipse-editor for viewing images.
+      QuickImage2 is an eclipse plugin for viewing images.
 You can browse images one by one, . or all as thumbnails. Use the
 toolbar to navigate or by single- or double-clicking the images.
-By default QuickImage associates its editor with .bmp, .cur, .dcx, .gif, .ico, .incs, .jpeg, .jpg, .pam, .pbm, .pcx, .pgm, .pict, .png, .pnm, .ppm, .psd, .sgi, .svg, .tga, .tif, .tiff, .webp, .xpm, .xwd
+
+By default QuickImage associates its editor with .bmp, .cur,
+.dcx, .gif, .ico, .incs, .jpeg, .jpg, .pam, .pbm, .pcx, .pgm,
+.pict, .png, .pnm, .ppm, .psd, .sgi, .svg, .tga, .tif, .tiff,
+.webp, .xpm, .xwd
    </description>
 
    <copyright>
@@ -17,7 +21,7 @@ By default QuickImage associates its editor with .bmp, .cur, .dcx, .gif, .ico, .
        Copyright © 2023, . George Lindholm
    </copyright>
 
-   <license url="http://www.opensource.org/licenses/cpl1.0.txt">
+   <license url="https://opensource.org/license/cpl1-0-txt/">
       COMMON PUBLIC LICENSE (CPL) v1.0
 
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICENSE (&quot;AGREEMENT&quot;). ANY USE, . REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT&apos;S ACCEPTANCE OF THIS AGREEMENT.
