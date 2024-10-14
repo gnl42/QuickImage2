@@ -12,7 +12,7 @@
 
 	<developers>
 		<developer>
-			<name>Gorge Lindholm</name>
+			<name>George Lindholm</name>
 			<roles>
 				<role>Maintainer</role>
 			</roles>
@@ -59,6 +59,7 @@
 		<module>quickimage2-plugin</module>
 		<module>quickimage2-feature</module>
 		<module>quickimage2-p2</module>
+		<module>quickimage2-test</module>
 	</modules>
 
 	<build>
