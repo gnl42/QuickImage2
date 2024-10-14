@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="me.glindholm.plugin.quickimage2.feature_2.0.0.qualifier.jar" id="me.glindholm.plugin.quickimage2.feature" version="2.0.0.qualifier">
+   <feature url="me.glindholm.plugin.quickimage2.feature_2.0.1.qualifier.jar" id="me.glindholm.plugin.quickimage2.feature" version="2.0.1.qualifier">
       <category name="Tools"/>
    </feature>
    <category-def name="Tools" label="QuickImage2">
