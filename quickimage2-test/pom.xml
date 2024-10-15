@@ -7,6 +7,6 @@
 		<artifactId>quickimage2</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>quickimage2-test</artifactId>
+	<artifactId>me.glindholm.plugin.quickimage2.test</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 </project>
