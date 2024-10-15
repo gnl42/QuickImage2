@@ -6,13 +6,13 @@
 
 	<groupId>me.glindholm.plugin.quickimage2</groupId>
 	<artifactId>quickimage2</artifactId>
-	<version>2.0.0-SNAPSHOT</version>
+	<version>2.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>QuickImage2</name>
 
 	<developers>
 		<developer>
-			<name>Gorge Lindholm</name>
+			<name>George Lindholm</name>
 			<roles>
 				<role>Maintainer</role>
 			</roles>
@@ -37,7 +37,7 @@
 	</contributors>
 
 	<properties>
-		<tycho.version>4.0.4</tycho.version>
+		<tycho.version>4.0.9</tycho.version>
 
 		<!-- PROJECT SETTINGS -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,6 +59,7 @@
 		<module>quickimage2-plugin</module>
 		<module>quickimage2-feature</module>
 		<module>quickimage2-p2</module>
+		<module>quickimage2-test</module>
 	</modules>
 
 	<build>
@@ -335,7 +336,7 @@
 						<artifact>
 							<groupId>me.glindholm.plugin.quickimage2</groupId>
 							<artifactId>quickimage2.target</artifactId>
-							<version>2.0.0-SNAPSHOT</version>
+							<version>2.1.0-SNAPSHOT</version>
 						</artifact>
 					</target>
 				</configuration>
