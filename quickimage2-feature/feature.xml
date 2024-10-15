@@ -2,7 +2,7 @@
 <feature
       id="me.glindholm.plugin.quickimage2.feature"
       label="QuickImage2"
-      version="2.0.1.qualifier"
+      version="2.1.0.qualifier"
       provider-name="George Lindholm">
 
    <description>
@@ -185,6 +185,10 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICEN
 
    <plugin
          id="org.apache.batik.xml"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.twelvemonkeys.imageio.dds"
          version="0.0.0"/>
 
 </feature>

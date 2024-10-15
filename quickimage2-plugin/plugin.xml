@@ -10,7 +10,7 @@
             default="true"
             name="QuickImage2 Editor"
             id="me.glindholm.plugin.quickimage2.editors.QuickImageEditor"
-            extensions="bmp,cur,dcx,gif,ico,incs,jpeg,jpg,pam,pbm,pcx,pgm,pict,png,pnm,ppm,psd,sgi,svg,tga,tif,tiff,webp,xpm,xwd">
+            extensions="bmp,cur,dcx,dds,gif,ico,incs,jpeg,jpg,pam,pbm,pcx,pgm,pict,png,pnm,ppm,psd,sgi,svg,tga,tif,tiff,webp,xpm,xwd">
       </editor>
    </extension>
 

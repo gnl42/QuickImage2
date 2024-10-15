@@ -15,6 +15,7 @@ import com.twelvemonkeys.imageio.plugins.bmp.BMPImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.bmp.CURImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.bmp.ICOImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.dcx.DCXImageReaderSpi;
+import com.twelvemonkeys.imageio.plugins.dds.DDSImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.icns.ICNSImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.iff.IFFImageReaderSpi;
 import com.twelvemonkeys.imageio.plugins.jpeg.JPEGImageReaderSpi;
@@ -49,6 +50,7 @@ public class QuickImagePlugin extends AbstractUIPlugin {
             new BMPImageReaderSpi(), //
             new CURImageReaderSpi(), //
             new DCXImageReaderSpi(), //
+            new DDSImageReaderSpi(), //
             new ICNSImageReaderSpi(), //
             new ICOImageReaderSpi(), //
             new IFFImageReaderSpi(), //
