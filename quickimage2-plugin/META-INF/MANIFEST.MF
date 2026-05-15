@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Automatic-Module-Name: me.glindholm.plugin.quickimage2.plugin
 Bundle-Name: QuickImage2
 Bundle-SymbolicName: me.glindholm.plugin.quickimage2.plugin; singleton:=true
-Bundle-Version: 2.1.0.qualifier
+Bundle-Version: 2.2.0.qualifier
 Bundle-Activator: me.glindholm.plugin.quickimage2.QuickImagePlugin
 Bundle-Vendor: George Lindholm
 Bundle-Localization: plugin
@@ -33,7 +34,7 @@ Require-Bundle: org.eclipse.core.resources,
  com.twelvemonkeys.imageio.core,
  com.twelvemonkeys.imageio.metadata,
  com.twelvemonkeys.imageio.bmp,
- com.twelvemonkeys.imageio.dds;bundle-version="3.12.0",
+ com.twelvemonkeys.imageio.dds,
  com.twelvemonkeys.imageio.icns,
  com.twelvemonkeys.imageio.iff,
  com.twelvemonkeys.imageio.jpeg,
@@ -48,5 +49,6 @@ Require-Bundle: org.eclipse.core.resources,
  com.twelvemonkeys.imageio.webp,
  com.twelvemonkeys.imageio.xwd,
  edu.illinois.library.imageio-xpm;bundle-version="1.0.1"
+Provide-Capability: osgi.extender; osgi.extender=osgi.serviceloader.registrar; version:Version=1.0.0
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21

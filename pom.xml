@@ -6,7 +6,7 @@
 
 	<groupId>me.glindholm.plugin.quickimage2</groupId>
 	<artifactId>quickimage2</artifactId>
-	<version>2.1.0-SNAPSHOT</version>
+	<version>2.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>QuickImage2</name>
 
@@ -37,7 +37,7 @@
 	</contributors>
 
 	<properties>
-		<tycho.version>4.0.9</tycho.version>
+		<tycho.version>4.0.13</tycho.version>
 
 		<!-- PROJECT SETTINGS -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,9 +57,9 @@
 	<modules>
 		<module>quickimage2.target</module>
 		<module>quickimage2-plugin</module>
+		<module>quickimage2-test</module>
 		<module>quickimage2-feature</module>
 		<module>quickimage2-p2</module>
-		<module>quickimage2-test</module>
 	</modules>
 
 	<build>
@@ -73,42 +73,37 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>3.12.1</version>
+					<version>3.21.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.1.1</version>
+					<version>3.1.4</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>3.4.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-report-plugin</artifactId>
-					<version>3.2.2</version>
+					<version>3.6.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.4.1</version>
+					<version>3.6.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.5.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
-					<version>3.2.0</version>
+					<version>3.5.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jxr-plugin</artifactId>
-					<version>3.3.0</version>
+					<version>3.6.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
@@ -172,11 +167,6 @@
 					<version>${tycho.version}</version>
 				</plugin>
 				<plugin>
-					<groupId>org.eclipse.cbi.maven.plugins</groupId>
-					<artifactId>eclipse-jarsigner-plugin</artifactId>
-					<version>1.4.2</version>
-				</plugin>
-				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-packaging-plugin</artifactId>
 					<version>${tycho.version}</version>
@@ -190,7 +180,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
-					<version>3.1.1</version>
+					<version>3.6.3</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -206,7 +196,7 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-compiler-plugin</artifactId>
 				<configuration>
-					<release>17</release>
+					<release>21</release>
 					<optimize>true</optimize>
 					<showWarnings>false</showWarnings>
 				</configuration>
@@ -336,7 +326,7 @@
 						<artifact>
 							<groupId>me.glindholm.plugin.quickimage2</groupId>
 							<artifactId>quickimage2.target</artifactId>
-							<version>2.1.0-SNAPSHOT</version>
+							<version>2.2.0-SNAPSHOT</version>
 						</artifact>
 					</target>
 				</configuration>
